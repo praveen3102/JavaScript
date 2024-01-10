@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color-Change</title>
+  <style>
+    .box {
+      width: 450px;
+      height: 300px;
+      border: 1px solid black;
+      /* margin: 0 auto; */
+    }
+
+    button {
+      padding: 10px 40px;
+      margin-top: 10px;
+      background-color: rgb(112, 58, 162);
+      border: none;
+      border-radius: 7px;
+      font-size: 15px;
+      color: aliceblue;
+      cursor: pointer;
+      transition: 0.2s linear;
+    }
+
+    button:hover {
+      opacity: 0.9;
+      background-color: brown;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <button onclick="Changecolor()">Change Color</button>
+  <button onclick="autostart()">Continue</button>
+  <button onclick="clearInt()">Stop</button>
+</body>
+<script>
+  let colors = ["blue", "red", "yellow", "pink", "black", "teal", "crimson"];
+  let box = document.querySelector("div");
+  let colorIndex = 0;
+  box.style.backgroundColor = colors[colorIndex]
+  function Changecolor() {
+    if (colorIndex < colors.length) {
+      colorIndex++;
+      if (colorIndex == 4) {
+        if(confirm("Continue..") === true){
+          colorIndex + 1;
+        }else{
+          colorIndex = 0;
+        }
+      } else if (colorIndex == colors.length){
+
+        alert("Slides are Ended...")
+      }
+    }
+    else {
+      colorIndex = 0
+    }
+    box.style.backgroundColor = colors[colorIndex];
+  }
+  let timer;
+  function autostart()
+{
+  timer = setInterval(() =>{
+    if (colorIndex < colors.length){
+      colorIndex++
+    } else{
+      colorIndex = 0
+    }
+    box.style.backgroundColor = colors[colorIndex];
+  }, 400)
+}
+function clearInt(){
+  clearInterval(timer)
+}
+
+</script>
+
+</html>

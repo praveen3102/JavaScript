@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maths Operations</title>
+    <style>
+        *{
+            font-family: 'Courier New', Courier, monospace;
+        }
+        h1{
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+        .praveen{
+            /* width: 54%; */
+            margin-inline: auto;
+            text-align: center;
+            border: 5px ridge black;
+            margin-bottom: 1.8rem;
+
+        }
+        h1~div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.8rem;
+        }
+        h1~div>input{
+            width: 54%;
+            font-size: 1.8rem;
+        }
+        #ans{
+            display: block;
+            text-align: center;
+            padding: 1.2rem;
+            color: blue;
+            font-size: 1.5rem;
+            border: 3px solid blueviolet;
+        }
+        button{
+            font-size: 1.8rem;
+            padding: 5px;
+            margin-block: 5px;
+            /* margin-inline:; */
+
+        }
+        h2{
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="praveen">
+    <h1>Maths Operations</h1>
+    <span><b>Enter First Number</span>
+    <input type="number" id="num1" title="Enter Number Only" autofocus>
+    <br>
+    <br>
+    <span>Enter Second Number</span>
+    <input type="number" id="num2" title="Enter Number Only">
+    <br>
+    <br>
+    <button type="button" onclick="add()" accesskey="+">+</button>
+    <button type="button" onclick="sub()" accesskey="-">-</button>
+    <button type="button" onclick="mul()" accesskey="*">*</button>
+    <button type="button" onclick="div()" accesskey="/">/</button>
+    <button type="button" onclick="mod()" accesskey="%">%</button>
+    <b id="ans">ANWSER WILL BE DISPLAYED HERE</b>
+  </div>
+    <h2>PRESS Alt + <b style="color: red;">[Num Key]</b>MATH OPERATIONS
+    <br>
+    FOR EX -: <br>
+    Alt + (+) Addition ,
+    Alt + (-) Subtracation.
+    <br>
+    IF THIS DOSE NOT WORK THAN PRESS <br>
+    Alt + Shift + (Operations Symbol).</h2>
+
+
+
+    <script>
+        function add(){
+            let num1 = Number(document.getElementById("num1").value);
+            let num2 = Number(document.getElementById("num2").value);
+            document.getElementById('ans').innerHTML = "ADDITION OF" + num1 + " ADD " + num2 +"IS = " + (num1 + num2);
+            document.getElementById('ans').style.color = "blueviolet";
+        }
+
+        function sub(){
+            let num1 = Number(document.getElementById("num1").value);
+            let num2 = Number(document.getElementById("num2").value);
+            document.getElementById('ans').innerHTML = "SUBTRACTION OF" + num1 + "AND" + "IS =" + (num1 - num2);
+            document.getElementById('ans').style.color ="red";
+
+        }
+
+        function mul(){
+            let num1 = Number(document.getElementById("num1").value);
+            let num2 = Number(document.getElementById("num2").value);
+            document.getElementById('ans').innerHTML = "MuTIPLICATION OF "+ num1 + "AND" + num2 +(num1 * num2);
+            document.getElementById('ans').style.color ="green";
+        }
+
+        function div(){
+            let num1 = Number(document.getElementById("num1").value);
+            let num2 = Number(document.getElementById("num2").value);
+            document.getElementById('ans').innerHTML = "DIVIDION OF "+ num1 + "AND" + num2+" IS = " +(num1 / num2);
+            document.getElementById('ans').style.color ="blue";
+        }
+
+        function mod(){
+            let num1 = Number(document.getElementById("num1").value);
+            let num2 = Number(document.getElementById("num2").value);
+            document.getElementById('ans').innerHTML = "MODULO OF"+ num1 + "AND" + num2 + "IS" +(num1 % num2);
+            document.getElementById('ans').style.color ="green";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        align-items: center;
+        flex-direction: column;
+    }
+    .containe{
+        width: 500px;
+        padding: 20px;
+        box-shadow: 0 0 10px gray;
+      
+    }
+    input{
+        width: 100%;
+        height: 40px;
+        border: 2px solid black;
+        outline: none;
+        margin: 8px 0;
+        padding: 15px;
+    
+    }
+    span{
+        color: red;
+    }
+</style>
+<body>
+    <div class="container">
+    <samp>Neme</samp>
+    <input type="text" id="uname" placeholder="First Name "  onblur="checkUserName(this,'arror1')"> 
+    <span id="arror1"></span>
+    <br><br>
+    <samp>Password</samp>
+    <input type="password" name="upass" id="upass" placeholder=" password " onblur="checkUserName(this,'arror2')">
+    <span id="arror2"></span>
+    <br> <br>
+    <samp>Mobile No.</samp>
+    <input type="number" name="umobile" id="umobile" placeholder="Mobile No. " onblur="checkUserName(this,'arror3')">
+    <span id="arror3"></span>
+    <br><br>
+    <samp>E-mail</samp>
+    <input type="email" name="uemail" id="uemail" placeholder="E-mail " onblur="checkUserName(this,'arror4')">
+    <span id="arror4"></span> 
+    </div>
+
+</body>
+<script>
+   let chechUserName = document.getElementById("uname");
+   let chechUserPass = document.getElementById("upass");
+   let chechUserMobile = document.getElementById("umobile");
+   let chechUserEmail = document.getElementById("uemail");
+
+   function checkPassword() {
+            let inputtyp = document.getElementById("pass")
+            if (inputtyp.type === 'password') {
+                inputtyp.type = 'text'
+            }
+            else {
+                inputtyp.type = 'password'
+            }
+        }
+        
+   function checkUserName(a , spnid) {
+    if(a.value == "") {
+        document.getElementById(spnid).innerText = "Please Enter Your First Name"
+    } else {
+        document.getElementById(spnid).innerText = ""
+    }
+   }
+   chechUserName()
+</script>
+</html>
